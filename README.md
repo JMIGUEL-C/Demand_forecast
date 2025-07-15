@@ -80,7 +80,7 @@ pip install -r requirements.txt
 
 You can download data from the XM API:
 
-- Using the notebook: `notebooks/Pronostico_Demanda_Energetica_LSTM.ipynb`
+- Using the notebook: `notebooks/LSTM_Energy_Demand_Forecasting.ipynb`
 - Or running directly:
 
 ```bash
@@ -138,7 +138,7 @@ After training, in the `results/` folder you will find:
 
 **Miguel Correa**  
 Intelligent Energy Engineering – Universidad Icesi  
-GitHub: [@miguelcorrea](https://github.com/miguelcorrea)
+GitHub: [@JMIGUEL-C](https://github.com/JMIGUEL-C)
 
 ---
 
