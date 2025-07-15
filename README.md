@@ -22,7 +22,7 @@ Pronostico_De_Demanda/
 │   └── xm_api_data.csv                  # Raw data downloaded from XM API
 │
 ├── notebooks/
-│   └── Pronostico_Demanda_Energetica_LSTM.ipynb  # Complete experimentation process
+│   └── LSTM_Energy_Demand_Forecasting.ipynb  # Complete experimentation process
 │
 ├── src/
 │   ├── data_loader.py                  # Script to download data
