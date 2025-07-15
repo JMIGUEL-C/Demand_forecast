@@ -1,147 +1,147 @@
-# Pronóstico de Demanda Energética con LSTM
+# Energy Demand Forecasting with LSTM
 
-Este proyecto tiene como objetivo predecir la demanda diaria de energía eléctrica en la ciudad de **Cali, Colombia**, utilizando un modelo de red neuronal recurrente de tipo **LSTM (Long Short-Term Memory)**. 
+This project aims to predict daily electricity demand in the city of **Cali, Colombia**, using a **LSTM (Long Short-Term Memory)** recurrent neural network model.
 
-Los datos históricos se obtienen de la API pública de **XM**, operador del Sistema Interconectado Nacional y administrador del Mercado de Energía Mayorista de Colombia.
+Historical data is obtained from the **XM** public API, operator of the National Interconnected System and administrator of Colombia's Wholesale Energy Market.
 
-El flujo completo abarca:
+The complete workflow covers:
 
-- Extracción de datos desde la API de XM
-- Preprocesamiento y creación de características
-- Entrenamiento y evaluación del modelo
-- Visualización de resultados a través de un **dashboard interactivo**
+- Data extraction from the XM API
+- Preprocessing and feature creation
+- Model training and evaluation
+- Results visualization through an **interactive dashboard**
 
 ---
 
-## Estructura del Proyecto
+## Project Structure
 
 ```
 Pronostico_De_Demanda/
 │
 ├── data/
-│   └── xm_api_data.csv                  # Datos brutos descargados de la API de XM
+│   └── xm_api_data.csv                  # Raw data downloaded from XM API
 │
 ├── notebooks/
-│   └── Pronostico_Demanda_Energetica_LSTM.ipynb  # Proceso completo de experimentación
+│   └── Pronostico_Demanda_Energetica_LSTM.ipynb  # Complete experimentation process
 │
 ├── src/
-│   ├── data_loader.py                  # Script para descargar los datos
-│   ├── processing.py                   # Funciones de limpieza y preprocesamiento
-│   ├── lstm_model.py                   # Arquitectura del modelo LSTM
-│   ├── train.py                        # Entrenamiento del modelo
-│   ├── evaluate.py                     # Evaluación del modelo
-│   └── utils.py                        # Funciones auxiliares
+│   ├── data_loader.py                  # Script to download data
+│   ├── processing.py                   # Cleaning and preprocessing functions
+│   ├── lstm_model.py                   # LSTM model architecture
+│   ├── train.py                        # Model training
+│   ├── evaluate.py                     # Model evaluation
+│   └── utils.py                        # Utility functions
 │
 ├── dashboard/
-│   └── app.py                          # Dashboard interactivo con Streamlit
+│   └── app.py                          # Interactive dashboard with Streamlit
 │
 ├── results/
-│   ├── predicciones_vs_reales.png     # Gráfico de resultados
-│   └── metrics.txt                    # Métricas (RMSE, MAE, R²)
+│   ├── predicciones_vs_reales.png     # Results plot
+│   └── metrics.txt                    # Metrics (RMSE, MAE, R²)
 │
-├── venv/                               # Entorno virtual (opcional)
-├── requirements.txt                    # Dependencias del proyecto
+├── venv/                               # Virtual environment (optional)
+├── requirements.txt                    # Project dependencies
 └── README.md
 ```
 
 ---
 
-## Cómo Empezar
+## Getting Started
 
-### Requisitos Previos
+### Prerequisites
 
-- Python 3.8 o superior
+- Python 3.8 or higher
 - Git
 - Jupyter Notebook
-- (Opcional) Virtualenv o conda
+- (Optional) Virtualenv or conda
 
-### Instalación
+### Installation
 
 ```bash
-git clone <URL-del-repositorio>
+git clone <repository-URL>
 cd Pronostico_De_Demanda
 
-# Crear y activar entorno virtual
+# Create and activate virtual environment
 python -m venv venv
 # Windows
-.env\Scripts\ctivate
+venv\Scripts\activate
 # macOS/Linux
 source venv/bin/activate
 
-# Instalar dependencias
+# Install dependencies
 pip install -r requirements.txt
 ```
 
 ---
 
-## Uso del Proyecto
+## Project Usage
 
-### 1. Obtener los datos
+### 1. Get the data
 
-Puedes descargar los datos desde la API de XM:
+You can download data from the XM API:
 
-- Usando el notebook: `notebooks/Pronostico_Demanda_Energetica_LSTM.ipynb`
-- O ejecutando directamente:
+- Using the notebook: `notebooks/Pronostico_Demanda_Energetica_LSTM.ipynb`
+- Or running directly:
 
 ```bash
 python src/data_loader.py
 ```
 
-### 2. Entrenamiento del Modelo
+### 2. Model Training
 
-Sigue los pasos del notebook:
+Follow the notebook steps:
 
-- Limpieza de datos
-- Ingeniería de características (lags, festivos, etc.)
-- Escalado
-- Entrenamiento y evaluación del modelo
-- Guardado de resultados
+- Data cleaning
+- Feature engineering (lags, holidays, etc.)
+- Scaling
+- Model training and evaluation
+- Save results
 
-### 3. Dashboard Interactivo
+### 3. Interactive Dashboard
 
-Ejecuta la app para visualizar los resultados:
+Run the app to visualize results:
 
 ```bash
 streamlit run dashboard/app.py
 ```
 
-Podrás:
+You will be able to:
 
-- Ver predicciones vs valores reales
-- Obtener una predicción para un día específico
-- Explorar métricas del modelo
-
----
-
-## Resultados
-
-Después del entrenamiento, en la carpeta `results/` encontrarás:
-
-- `metrics.txt`: Métricas como RMSE, MAE y R².
-- `predicciones_lstm`: Comparación gráfica entre la demanda real y la predicha.
+- View predictions vs actual values
+- Get a prediction for a specific day
+- Explore model metrics
 
 ---
 
-## Dependencias Principales
+## Results
 
-- `pandas`: Manipulación de datos
-- `numpy`: Cálculos numéricos
-- `torch`: Red neuronal LSTM
-- `scikit-learn`: Escalado y métricas
-- `streamlit`: Dashboard interactivo
-- `plotly`: Gráficas interactivas
-- `holidays`: Cálculo de días festivos en Colombia
+After training, in the `results/` folder you will find:
+
+- `metrics.txt`: Metrics such as RMSE, MAE, and R².
+- `predicciones_lstm`: Graphical comparison between actual and predicted demand.
 
 ---
 
-## Autor
+## Main Dependencies
+
+- `pandas`: Data manipulation
+- `numpy`: Numerical calculations
+- `torch`: LSTM neural network
+- `scikit-learn`: Scaling and metrics
+- `streamlit`: Interactive dashboard
+- `plotly`: Interactive plots
+- `holidays`: Calculation of holidays in Colombia
+
+---
+
+## Author
 
 **Miguel Correa**  
-Ingeniería en Energía Inteligente – Universidad Icesi  
+Intelligent Energy Engineering – Universidad Icesi  
 GitHub: [@miguelcorrea](https://github.com/miguelcorrea)
 
 ---
 
-## Licencia
+## License
 
-Este proyecto está bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más información.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
